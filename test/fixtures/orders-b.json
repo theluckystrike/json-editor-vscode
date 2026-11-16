@@ -1,0 +1,11 @@
+{
+  "customer": { "city": "Paris", "name": "Ada" },
+  "version": "1.1",
+  "orderId": 18446744073709551615,
+  "items": [
+    { "sku": "A1", "qty": 3 },
+    { "sku": "B2", "qty": 1 },
+    { "sku": "C3", "qty": 5 }
+  ],
+  "paid": true
+}

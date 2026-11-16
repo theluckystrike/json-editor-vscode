@@ -1,0 +1,6 @@
+// JSON5 file
+{
+  unquoted: 'single quotes',
+  hex: 0x1F,
+  trailing: [1, 2,],
+}

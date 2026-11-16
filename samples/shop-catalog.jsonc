@@ -1,0 +1,38 @@
+{
+  // Demo shop catalog for the JSON Editor sample. Comments like this one stay when you edit in the tree.
+  "name": "Northwind Garden Supply",
+  "version": "2.4.0",
+  "currency": "EUR",
+  "orderIdStart": 9007199254740993, // larger than 2^53: shown and saved exactly
+  "open": true,
+  "contact": {
+    "email": "shop@example.com",
+    "phone": "+49 30 1234567",
+    "address": {
+      "street": "Gartenweg 12",
+      "city": "Berlin",
+      "postcode": "10115"
+    }
+  },
+  "products": [
+    { "sku": "GT-100", "name": "Garden trowel", "price": 12.5, "stock": 140, "tags": ["tools", "hand"], "active": true },
+    { "sku": "WC-220", "name": "Watering can, 10 l", "price": 18.9, "stock": 35, "tags": ["watering"], "active": true },
+    { "sku": "SP-031", "name": "Seed packs, mixed herbs", "price": 4.25, "stock": 0, "tags": ["seeds"], "active": false },
+    { "sku": "HS-410", "name": "Hose, 25 m", "price": 39, "stock": 12, "tags": ["watering", "outdoor"], "active": true },
+    { "sku": "GL-007", "name": "Gloves, size M", "price": 7.95, "stock": 260, "tags": ["clothing"], "active": true },
+    { "sku": "PT-550", "name": "Clay pot, 30 cm", "price": 15, "stock": 48, "tags": ["pots"], "active": true }
+  ],
+  "shipping": {
+    "freeFrom": 50,
+    "zones": [
+      { "zone": "DE", "price": 4.9, "days": 2 },
+      { "zone": "EU", "price": 9.9, "days": 5 },
+      { "zone": "World", "price": 24, "days": 10 }
+    ]
+  },
+  "features": {
+    "giftWrap": false,
+    "reviews": true,
+    "newsletter": null
+  }
+}

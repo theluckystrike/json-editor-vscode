@@ -1,0 +1,300 @@
+{
+  "name": "zovo-json-editor",
+  "displayName": "JSON Editor, Tree & Form View",
+  "description": "JSON editor for VS Code: edit .json and .jsonc files in a tree or a form beside the text. Rename keys, change values and types, add, duplicate, delete and drag to reorder. Saving changes only the edited spots, so comments and formatting stay. Dark and light themes. Offline, no account.",
+  "version": "0.1.0",
+  "publisher": "zovo",
+  "license": "MIT",
+  "icon": "icon.png",
+  "galleryBanner": {
+    "color": "#1E2530",
+    "theme": "dark"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/theluckystrike/json-editor-vscode"
+  },
+  "bugs": {
+    "url": "https://github.com/theluckystrike/json-editor-vscode/issues"
+  },
+  "homepage": "https://github.com/theluckystrike/json-editor-vscode#readme",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Visualization",
+    "Formatters",
+    "Other"
+  ],
+  "keywords": [
+    "json editor",
+    "json",
+    "json tree",
+    "json form",
+    "dark mode"
+  ],
+  "main": "./src/extension.js",
+  "activationEvents": [
+    "onUri"
+  ],
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": true
+    },
+    "virtualWorkspaces": true
+  },
+  "contributes": {
+    "customEditors": [
+      {
+        "viewType": "jsonEditor.tree",
+        "displayName": "JSON Editor (Tree & Form)",
+        "selector": [
+          {
+            "filenamePattern": "*.json"
+          },
+          {
+            "filenamePattern": "*.jsonc"
+          },
+          {
+            "filenamePattern": "*.json5"
+          }
+        ],
+        "priority": "option"
+      }
+    ],
+    "commands": [
+      {
+        "command": "jsonEditor.open",
+        "title": "Edit in JSON Editor (Tree & Form)",
+        "category": "JSON Editor",
+        "icon": "$(edit)"
+      },
+      {
+        "command": "jsonEditor.openAsText",
+        "title": "Open the Text Beside",
+        "category": "JSON Editor",
+        "icon": "$(file-code)"
+      },
+      {
+        "command": "jsonEditor.openSample",
+        "title": "Open the Sample File",
+        "category": "JSON Editor"
+      },
+      {
+        "command": "jsonEditor.openWalkthrough",
+        "title": "Get Started",
+        "category": "JSON Editor"
+      },
+      {
+        "command": "jsonEditor.moreViewers",
+        "title": "More free tools by Zovo",
+        "category": "JSON Editor"
+      },
+      {
+        "command": "jsonEditor.supportDeveloper",
+        "title": "Support the developer",
+        "category": "JSON Editor"
+      },
+      {
+        "command": "jsonEditor.table",
+        "title": "Table Mode: Edit an Array of Objects as a Table (Pro)",
+        "category": "JSON Editor",
+        "icon": "$(table)"
+      },
+      {
+        "command": "jsonEditor.bulk",
+        "title": "Bulk Edit by JSONPath: Set, Rename, Delete or Transform (Pro)",
+        "category": "JSON Editor"
+      },
+      {
+        "command": "jsonEditor.compare",
+        "title": "Compare and Merge with Another JSON File (Pro)",
+        "category": "JSON Editor"
+      },
+      {
+        "command": "jsonEditor.zovoPro.table",
+        "title": "Zovo Pro: Table mode for an array of objects"
+      },
+      {
+        "command": "jsonEditor.zovoPro.bulk",
+        "title": "Zovo Pro: Bulk edit by JSONPath"
+      },
+      {
+        "command": "jsonEditor.zovoPro.compare",
+        "title": "Zovo Pro: Compare and merge with another JSON file"
+      },
+      {
+        "command": "jsonEditor.getPro",
+        "title": "Get Zovo Pro (USD 19 once, all Zovo extensions)",
+        "category": "Zovo Pro"
+      },
+      {
+        "command": "jsonEditor.payWithPayPal",
+        "title": "Pay for Zovo Pro with PayPal (USD 19, team of 5 USD 59)",
+        "category": "Zovo Pro"
+      },
+      {
+        "command": "jsonEditor.unlockWithSponsors",
+        "title": "I already paid: unlock with GitHub Sponsors",
+        "category": "Zovo Pro"
+      },
+      {
+        "command": "jsonEditor.enterLicenseKey",
+        "title": "Enter Zovo Pro license key",
+        "category": "Zovo Pro"
+      },
+      {
+        "command": "jsonEditor.removeLicense",
+        "title": "Remove Zovo Pro from this editor",
+        "category": "Zovo Pro"
+      },
+      {
+        "command": "jsonEditor.payByCard",
+        "title": "Pay for Zovo Pro by card (USD 19)",
+        "category": "Zovo Pro"
+      },
+      {
+        "command": "jsonEditor.enterKey",
+        "title": "Enter a key",
+        "category": "Zovo Pro"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "jsonEditor.open",
+          "when": "resourceFilename =~ /\\.(json|jsonc|json5)$/i && activeEditor == workbench.editors.files.textFileEditor",
+          "group": "navigation@5"
+        },
+        {
+          "command": "jsonEditor.openAsText",
+          "when": "activeCustomEditorId == 'jsonEditor.tree'",
+          "group": "navigation@1"
+        }
+      ],
+      "explorer/context": [
+        {
+          "command": "jsonEditor.open",
+          "when": "resourceFilename =~ /\\.(json|jsonc|json5)$/i && !explorerResourceIsFolder",
+          "group": "navigation@9"
+        },
+        {
+          "command": "jsonEditor.zovoPro.table",
+          "when": "resourceFilename =~ /\\.(json|jsonc|json5)$/i && !explorerResourceIsFolder && config.jsonEditor.showProTools",
+          "group": "zovoPro@1"
+        },
+        {
+          "command": "jsonEditor.zovoPro.bulk",
+          "when": "resourceFilename =~ /\\.(json|jsonc|json5)$/i && !explorerResourceIsFolder && config.jsonEditor.showProTools",
+          "group": "zovoPro@2"
+        },
+        {
+          "command": "jsonEditor.zovoPro.compare",
+          "when": "resourceFilename =~ /\\.(json|jsonc|json5)$/i && !explorerResourceIsFolder && config.jsonEditor.showProTools",
+          "group": "zovoPro@3"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "jsonEditor.table",
+          "when": "config.jsonEditor.showProTools"
+        },
+        {
+          "command": "jsonEditor.bulk",
+          "when": "config.jsonEditor.showProTools"
+        },
+        {
+          "command": "jsonEditor.compare",
+          "when": "config.jsonEditor.showProTools"
+        },
+        {
+          "command": "jsonEditor.zovoPro.table",
+          "when": "false"
+        },
+        {
+          "command": "jsonEditor.zovoPro.bulk",
+          "when": "false"
+        },
+        {
+          "command": "jsonEditor.zovoPro.compare",
+          "when": "false"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "JSON Editor, Tree & Form View",
+      "properties": {
+        "jsonEditor.showProTools": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show the Zovo Pro tools (Table mode, Bulk edit, Compare and merge) in the Command Palette, the Explorer menu and the editor toolbar. Everything free stays visible."
+        },
+        "jsonEditor.askForRating": {
+          "type": "boolean",
+          "default": true,
+          "description": "Ask once for a Marketplace rating after JSON files opened without an error at two times at least 30 minutes apart. \"Later\" asks one more time after 7 days, \"No thanks\" never asks again. Nothing is sent anywhere."
+        },
+        "jsonEditor.showSupportLinks": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show the small Rate, More free tools and Zovo Pro links at the bottom of the editor. Nothing is sent anywhere."
+        }
+      }
+    },
+    "walkthroughs": [
+      {
+        "id": "jsonEditor.start",
+        "title": "Get started with the JSON Editor",
+        "description": "Edit JSON in a tree or a form next to the text, and keep the file as it was.",
+        "steps": [
+          {
+            "id": "open",
+            "title": "Open a JSON file in the tree",
+            "description": "Right-click a .json or .jsonc file and pick Edit in JSON Editor, or click the pencil button at the top right of a JSON text tab. The text editor stays the default.\n[Open the sample file](command:jsonEditor.openSample)",
+            "media": {
+              "image": "images/screenshot.png",
+              "altText": "A JSON file open in the tree editor in a dark VS Code theme, with the form of the selected object on the right."
+            },
+            "completionEvents": [
+              "onCommand:jsonEditor.openSample"
+            ]
+          },
+          {
+            "id": "edit",
+            "title": "Edit in the tree or the form",
+            "description": "Double-click a value or a key to change it, use the row buttons to add, duplicate or delete, drag a row to move it, and pick a new type from the type menu. The form on the right shows the fields of the selected object.",
+            "media": {
+              "markdown": "walkthrough/edit.md"
+            }
+          },
+          {
+            "id": "text",
+            "title": "The text stays in charge",
+            "description": "Open the text beside the tree. Changes in one show in the other, undo and redo work across both, and a save keeps your comments and formatting.\n[Open the text beside](command:jsonEditor.openAsText)",
+            "media": {
+              "markdown": "walkthrough/text.md"
+            },
+            "completionEvents": [
+              "onCommand:jsonEditor.openAsText"
+            ]
+          },
+          {
+            "id": "zovo-related",
+            "title": "Tools that often go with JSON",
+            "description": "For very large read-only JSON files, JSON Lines logs, and CSV exports, these free Zovo extensions help. A link opens the extension page, and you choose there whether to install it.\n[Large JSON Viewer](command:extension.open?%5B%22zovo.zovo-json-tree-viewer%22%5D)\n[JSONL Viewer](command:extension.open?%5B%22zovo.zovo-jsonl-viewer%22%5D)\n[CSV Viewer & CSV Editor](command:extension.open?%5B%22zovo.zovo-csv-viewer%22%5D)",
+            "media": {
+              "markdown": "walkthrough/related.md"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "scripts": {
+    "test": "node scripts/test.js",
+    "package": "npx -y @vscode/vsce@3 package --no-dependencies"
+  },
+  "sponsor": {
+    "url": "https://github.com/sponsors/theluckystrike/sponsorships?tier_id=679878"
+  }
+}

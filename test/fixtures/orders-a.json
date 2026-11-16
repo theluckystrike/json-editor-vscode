@@ -1,0 +1,10 @@
+{
+  "version": "1.0",
+  "orderId": 18446744073709551615,
+  "customer": { "name": "Ada", "city": "London" },
+  "items": [
+    { "sku": "A1", "qty": 2 },
+    { "sku": "B2", "qty": 1 }
+  ],
+  "note": "first"
+}

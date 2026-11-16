@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <rect x="2" y="2" width="124" height="124" rx="22" fill="#1E2530"/>
+  <text x="22" y="44" font-family="Menlo, Consolas, monospace" font-weight="700" font-size="34" fill="#F2C94C">{</text>
+  <text x="88" y="114" font-family="Menlo, Consolas, monospace" font-weight="700" font-size="34" fill="#F2C94C">}</text>
+  <g stroke="#5B6B80" stroke-width="3" fill="none" stroke-linecap="round">
+    <path d="M46 36 V96"/>
+    <path d="M46 56 H58"/>
+    <path d="M46 76 H58"/>
+    <path d="M46 96 H58"/>
+  </g>
+  <rect x="38" y="28" width="16" height="16" rx="4" fill="#9CDCFE"/>
+  <rect x="62" y="50" width="40" height="12" rx="4" fill="#CE9178"/>
+  <rect x="62" y="70" width="28" height="12" rx="4" fill="#B5CEA8"/>
+  <rect x="62" y="90" width="20" height="12" rx="4" fill="#569CD6"/>
+  <path d="M96 22 l12 12 l-30 30 l-15 3 l3 -15 z" fill="#F2F4F7" stroke="#1E2530" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M90 28 l12 12" stroke="#1E2530" stroke-width="2"/>
+</svg>

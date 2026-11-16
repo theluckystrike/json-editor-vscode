@@ -1,0 +1,12 @@
+Real third-party JSON files used by the tests and the real-app gate. Downloaded 15 Nov 2026, unchanged.
+
+microsoft/vscode, MIT License, Copyright (c) 2015 - present Microsoft Corporation
+  ts-language-configuration.json   https://raw.githubusercontent.com/microsoft/vscode/main/extensions/typescript-basics/language-configuration.json (JSONC, comments)
+  vscode-settings.json             https://raw.githubusercontent.com/microsoft/vscode/main/.vscode/settings.json (JSONC, comments)
+  git-extension-package.json       https://raw.githubusercontent.com/microsoft/vscode/main/extensions/git/package.json (139 KB, arrays of objects)
+  vscode-src-tsconfig.json         https://raw.githubusercontent.com/microsoft/vscode/main/src/tsconfig.json
+
+nst/JSONTestSuite, MIT License, Copyright (c) 2016 Nicolas Seriot
+  y_object_duplicated_key.json            https://raw.githubusercontent.com/nst/JSONTestSuite/master/test_parsing/y_object_duplicated_key.json
+  y_string_accepted_surrogate_pair.json   https://raw.githubusercontent.com/nst/JSONTestSuite/master/test_parsing/y_string_accepted_surrogate_pair.json
+  n_structure_unclosed_array.json         https://raw.githubusercontent.com/nst/JSONTestSuite/master/test_parsing/n_structure_unclosed_array.json (broken on purpose)
